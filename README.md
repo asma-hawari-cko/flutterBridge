@@ -73,20 +73,17 @@ POST https://api.checkout.com/payment-sessions
   "payment_session_secret": "pss_e21237b4-214a-4e35-a35d-f33wkwo158f6"
 }
 
-⚙️ Initialize and Render Flow (Client-side)
-🧩 Android setup
-
-Project-level build.gradle:
-
+--- 
+## ⚙️ Initialize and Render Flow (Client-side)
+## 🧩 Android setup
+Project-level build.gradle
 repositories {
     mavenCentral()
     maven { url = uri("https://jitpack.io") }
     maven { url = uri("https://maven.fpregistry.io/releases") }
 }
 
-
-App-level build.gradle:
-
+App-level build.gradle
 dependencies {
     implementation 'com.checkout:checkout-android-components:$latest_version'
 }
@@ -111,13 +108,15 @@ CoroutineScope(Dispatchers.IO).launch {
     }
 }
 
+--- 
 
-💳 Accept Wallet Payments
-🍎 Apple Pay
+## 💳 Accept Wallet Payments
+#🍎 Apple Pay
 
 To add Apple Pay support:
 
-Create an Apple Merchant ID and a Payment Processing Certificate in the Apple Developer Portal.
+Create an Apple Merchant ID and a Payment Processing Certificate in the Apple Developer Portal
+.
 
 Generate a CSR from Checkout.com:
 
@@ -147,7 +146,7 @@ try checkoutComponentsSDK
     ])
   )
 
-🤖 Google Pay
+#🤖 Google Pay
 
 To add Google Pay support in Android:
 
@@ -184,16 +183,15 @@ val checkoutComponents = CheckoutComponentsFactory(config).create()
 val googlePayComponent = checkoutComponents.create(PaymentMethodName.GooglePay)
 googlePayComponent.Render()
 
-🧾 Handling Payment Responses
+## 🧾 Handling Payment Responses
 
 Payments may be synchronous (no redirect) or asynchronous (redirect required).
 
-Use the onSuccess and onError callbacks to handle client-side status.
+Use the onSuccess and onError callbacks to handle client-side payment status.
 
-Always wait for the webhook callback before confirming an order.
+⚠️ Always wait for the webhook callback before confirming an order.
 
 Example:
-
 val config = CheckoutComponentConfiguration(
   paymentSession = paymentSession,
   publicKey = publicKey,
@@ -205,17 +203,19 @@ val config = CheckoutComponentConfiguration(
 )
 
 
-You can also verify the payment using:
+You can also verify the payment using the API:
 
 GET https://api.checkout.com/payments/{cko-payment-id}
 
-🧪 Testing
+--- 
+
+## 🧪 Testing
 
 Use Checkout.com test cards to simulate different payment outcomes.
-Check payment statuses in your Dashboard under:
+You can view payment statuses in your Dashboard under:
 Payments → Processing → All payments
 
-⚠️ Important Note
+## ⚠️ Important Note
 
 In this Flutter bridge implementation, the Payment Session is currently hardcoded inside
 FlowPlatformView.
@@ -228,7 +228,7 @@ Copy the returned payment_session_secret and paste it into the FlowPlatformView 
 
 Replace the publicKey with your own Checkout.com public key.
 
-📚 Resources
+## 📚 Resources
 
 Checkout.com Flow SDK Docs
 
@@ -238,7 +238,7 @@ Apple Pay Setup Guide
 
 Google Pay API Docs
 
-🧑‍💻 Author
+## 🧑‍💻 Author
 
 Asma Hawari
 Flutter Bridge for Checkout.com Flow SDK
