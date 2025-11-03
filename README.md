@@ -1,4 +1,4 @@
-# 🧩 Flutter Bridge for Checkout.com Flow SDK & Remeber Me with Kotlin 2 
+# 🧩 Flutter Bridge for Checkout.com Flow & Remeber Me 
 
 **Last updated:** October 15, 2025  
 
