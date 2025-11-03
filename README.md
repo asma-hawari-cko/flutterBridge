@@ -46,7 +46,7 @@ POST https://api.checkout.com/payment-sessions
 
 
 **Example request:**
-```json
+
 {
   "amount": 1000,
   "currency": "GBP",
@@ -66,7 +66,7 @@ POST https://api.checkout.com/payment-sessions
 
 
 
-Example response:
+**Example response:**
 
 {
   "id": "ps_2Un6I6lRpIAiIEwQIyxWVnV9CqQ",
