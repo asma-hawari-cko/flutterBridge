@@ -1,6 +1,6 @@
 # 🧩 Flutter Bridge for Checkout.com Flow & Remeber Me 
 
-**Last updated:** October 15, 2025  
+**Last updated:** November 3, 2025  
 
 This project provides a **Flutter bridge** for integrating **Checkout.com’s Flow SDK** into mobile applications.  
 It enables seamless payment flows including **Apple Pay**, **Google Pay**, and other local payment methods directly in your Flutter app.
